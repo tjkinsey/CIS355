@@ -1,4 +1,4 @@
 USE ValleyVinyardsDaveIanTanner
 
-INSERT INTO PeopleAndCustomers (FullName, Phone, StreetAddress, Email, PersonType)
-	Values('DaveWells');
+INSERT INTO PeopleAndCustomers
+	Values('DaveWells', 6913143, '1236 Canvasback Ct.', 'dwells@rams.colostate.edu', 'C');
