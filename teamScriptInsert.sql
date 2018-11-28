@@ -1,7 +1,10 @@
 USE ValleyVinyardsDaveIanTanner
 
 INSERT INTO PeopleAndCustomers
-	Values('DaveWells', 6913143, '1236 Canvasback Ct.', 'dwells@rams.colostate.edu', 'C');
+	Values('Dave Wells', 6913143, '1236 Canvasback Ct.', 'dwells@rams.colostate.edu', 'V')
+	,('Bob Ross' 1234567, '1234 HeartsAndCandyLane.', 'BobThePainter@rams.colostate.edu' 'V')
+	,('Bob The Builder', '3456 IBuiltThisMfHouse!', 'BobTheBuilder@rams.colostate.edu', 'V')
+	,('Tanner Kinsey', 8889999, '111 Place Ave.', 'tkinsey@rams.colostate.edu', 'V');
 	
 INSERT INTO Vender
 	Values(2,5551111, 'Super Awesome Bottles Co.','Best Green Bottles Around')
