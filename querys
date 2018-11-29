@@ -73,3 +73,11 @@ Where
 
 select avg(WineBottleOrderLine.SalePrice) from WineBottleOrderLine;
 
+8. Give me information about the amount of total sales for each bottle on each order.
+
+SELECT  
+	WBOID, Size, Shape, Color, Inventory, MSRP, Quantity, (Quantity * MSRP) AS BottleSaleOnOrder
+FROM 
+	WineBottleOrderLine, WineBottleType 
+Where 
+	WineBottleOrderLine.WBTID = WineBottleType.WBTID;
