@@ -1,10 +1,11 @@
 USE ValleyVinyardsDaveIanTanner
 
+DELETE FROM WineBottleOrder;
 DELETE FROM Vendor;
 DELETE FROM PeopleAndCustomers;
 DBCC CHECKIDENT ("PeopleAndCustomers", RESEED, 0);
 DBCC CHECKIDENT (Vendor, RESEED, 0);
-
+DBCC CHECKIDENT (WineBottleOrder, RESEED, 0);
 
 INSERT INTO PeopleAndCustomers
 	Values('Dave Wells', 6913143, '1236 Canvasback Ct.', 'dwells@rams.colostate.edu', 'V')
