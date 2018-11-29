@@ -1,14 +1,13 @@
 USE ValleyVinyardsDaveIanTanner
 
-DELETE FROM WineBottleType;
 DELETE FROM WineBottleOrderLine;
+DELETE FROM WineBottleType;
 DELETE FROM WineBottleOrder;
 DELETE FROM Vendor;
 DELETE FROM PeopleAndCustomers;
 DBCC CHECKIDENT ("PeopleAndCustomers", RESEED, 0);
 DBCC CHECKIDENT (Vendor, RESEED, 0);
 DBCC CHECKIDENT (WineBottleOrder, RESEED, 0);
-DBCC CHECKIDENT (WineBottleOrderLine, RESEED, 0);
 DBCC CHECKIDENT (WineBottleType, RESEED, 0);
 
 INSERT INTO PeopleAndCustomers
@@ -30,7 +29,14 @@ INSERT INTO WineBottleOrder
 	(2,'4-19-2018','4-24-2018'),
 	(3,'1-10-2018','3-13-2018'),
 	(4,'12-16-2017','12-20-2017'),
+	(4,'10-24-2018','10-28-2018'),
 	(4,'10-24-2018','10-28-2018');
+
+INSERT INTO WineBottleType
+	VALUES(5.45, 4, 'Narrow Neck', 'Brown', 400)
+	,(8.22, 3, 'Wide Mouth', 'Green', 800)
+	,(8.99, 3.5, 'GoldyLox', 'Clear', 122)
+	,(11.99, 5, 'Ultra Glug', 'Blue', 0);
 
 INSERT INTO WineBottleOrderLine
 	VALUES(1,2,20,25.50),
@@ -41,9 +47,3 @@ INSERT INTO WineBottleOrderLine
 	(5,1,50,75.8),
 	(5,2,50,100.5),
 	(6,4,30,90.1);
-
-INSERT INTO WineBottleType
-	VALUES(5.45, 4, 'Narrow Neck', 'Brown', 400)
-	,(8.22, 3, 'Wide Mouth', 'Green', 800)
-	,(8.99, 3.5, 'GoldyLox', 'Clear', 122)
-	,(11.99, 5, 'Ultra Glug', 'Blue', 0);
