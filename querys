@@ -1,0 +1,10 @@
+select PeopleAndCustomers.FullName, 
+		PeopleAndCustomers.PersonType, 
+		PeopleAndCustomers.Phone,
+		Vendor.PrimaryContactName,
+		Vendor.PrimaryContactPhone,
+		Vendor.VendorDescription,
+		WineBottleOrder.OrderedOn
+
+ from PeopleAndCustomers inner join Vendor on PeopleAndCustomers.PCID = Vendor.PCID inner join WineBottleOrder on Vendor.VID = WineBottleOrder.VID
+ where Vendor.PrimaryContactName like '%Screw your cork%';
