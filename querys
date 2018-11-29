@@ -81,3 +81,6 @@ FROM
 	WineBottleOrderLine, WineBottleType 
 Where 
 	WineBottleOrderLine.WBTID = WineBottleType.WBTID;
+	
+9. Get an email list of our venders.
+select PeopleAndCustomers.Email from PeopleAndCustomers;
