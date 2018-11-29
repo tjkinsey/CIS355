@@ -25,3 +25,11 @@ select PeopleAndCustomers.FullName,
 
  from PeopleAndCustomers inner join Vendor on PeopleAndCustomers.PCID = Vendor.PCID inner join WineBottleOrder on Vendor.VID = WineBottleOrder.VID
  where WineBottleOrder.ReceivedOn is Null;
+
+3. List names and phone numbers of all venders.
+
+select PeopleAndCustomers.FullName, 
+		PeopleAndCustomers.PersonType,
+		PeopleAndCustomers.Phone
+from PeopleAndCustomers
+where PeopleAndCustomers.PersonType = 'V';
