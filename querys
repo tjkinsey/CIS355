@@ -58,3 +58,12 @@ WHERE
 	AND WineBottleOrder.WBOID = WineBottleOrderLine.WBOID
 	AND WineBottleOrderLine.WBTID = WineBottleType.WBTID
 	AND Inventory < 200;
+
+6. List the vendors that have been used more than once.
+
+Select 
+	VID, PrimaryContactName, PrimaryContactPhone 
+From 
+	Vendor 
+Where 
+	VID IN (SELECT VID FROM WineBottleOrder Group BY (VID) Having Count(VID) > 1);
