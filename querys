@@ -84,3 +84,12 @@ Where
 	
 9. Get an email list of our venders.
 select PeopleAndCustomers.Email from PeopleAndCustomers;
+
+10. List all orders in 2017.
+
+SELECT  
+	*
+FROM 
+	WineBottleOrder
+Where 
+	OrderedOn BETWEEN '01-01-2017' AND '12-31-2017';
