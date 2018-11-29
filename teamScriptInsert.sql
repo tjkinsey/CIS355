@@ -3,9 +3,11 @@ USE ValleyVinyardsDaveIanTanner
 DELETE FROM WineBottleOrder;
 DELETE FROM Vendor;
 DELETE FROM PeopleAndCustomers;
+DELETE FROM WineBottleOrderLine;
 DBCC CHECKIDENT ("PeopleAndCustomers", RESEED, 0);
 DBCC CHECKIDENT (Vendor, RESEED, 0);
 DBCC CHECKIDENT (WineBottleOrder, RESEED, 0);
+DBCC CHECKIDENT (WineBottleOrderLine, RESEED, 0);
 
 INSERT INTO PeopleAndCustomers
 	Values('Dave Wells', 6913143, '1236 Canvasback Ct.', 'dwells@rams.colostate.edu', 'V')
@@ -21,9 +23,19 @@ INSERT INTO Vendor
 	
 
 INSERT INTO WineBottleOrder
-VALUES(1,'11-28-2018',NULL),
-(2,'9-16-2018','9-18-2018'),
-(2,'4-19-2018','4-24-2018'),
-(3,'1-10-2018','3-13-2018'),
-(4,'12-16-2017','12-20-2017'),
-(4,'10-24-2018','10-28-2018');
+	VALUES(1,'11-28-2018',NULL),
+	(2,'9-16-2018','9-18-2018'),
+	(2,'4-19-2018','4-24-2018'),
+	(3,'1-10-2018','3-13-2018'),
+	(4,'12-16-2017','12-20-2017'),
+	(4,'10-24-2018','10-28-2018');
+
+INSERT INTO WineBottleOrderLine
+	VALUES(1,2,20,25.50),
+	(1,4,5,10.25),
+	(2,3,100,105.00),
+	(3,3,99,100.75),
+	(4,2,45,40.2),
+	(5,1,50,75.8),
+	(5,2,50,100.5),
+	(6,4,30,90.1);
