@@ -34,7 +34,32 @@ select PeopleAndCustomers.FullName,
 from PeopleAndCustomers
 where PeopleAndCustomers.PersonType = 'V';
 
-4. List the vendors that have been used more than once.
+4. What bottle types does Big ol Bottles Co. supply.
+
+select WineBottleType.Shape,
+		WineBottleType.Color,
+		WineBottleType.Size,
+		WineBottleType.Inventory,
+		WineBottleType.MSRP,
+		WineBottleType.WBTID
+from Vendor inner join WineBottleOrder on Vendor.VID = WineBottleOrder.VID
+		inner join WineBottleOrderLine on WineBottleOrderLine.WBOID = WineBottleOrder.WBOID
+		inner join WineBottleType on WineBottleOrderLine.WBTID = WineBottleType.WBTID
+where Vendor.PrimaryContactName like '%Big ol Bottles%';
+
+5. Get me the vendors contact info for bottles where inventory is below 200.
+
+SELECT 
+	Inventory AS CurrentStock, Vendor.PrimaryContactName, Vendor.PrimaryContactPhone, VendorDescription, MSRP 
+FROM 
+	Vendor, WineBottleOrder, WineBottleOrderLine, WineBottleType
+WHERE 
+	Vendor.VID = WineBottleOrder.VID 
+	AND WineBottleOrder.WBOID = WineBottleOrderLine.WBOID
+	AND WineBottleOrderLine.WBTID = WineBottleType.WBTID
+	AND Inventory < 200;
+
+6. List the vendors that have been used more than once.
 
 Select 
 	VID, PrimaryContactName, PrimaryContactPhone 
