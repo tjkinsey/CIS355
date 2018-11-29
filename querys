@@ -33,3 +33,16 @@ select PeopleAndCustomers.FullName,
 		PeopleAndCustomers.Phone
 from PeopleAndCustomers
 where PeopleAndCustomers.PersonType = 'V';
+
+4. What bottle types does Big ol Bottles Co. supply.
+
+select WineBottleType.Shape,
+		WineBottleType.Color,
+		WineBottleType.Size,
+		WineBottleType.Inventory,
+		WineBottleType.MSRP,
+		WineBottleType.WBTID
+from Vendor inner join WineBottleOrder on Vendor.VID = WineBottleOrder.VID
+		inner join WineBottleOrderLine on WineBottleOrderLine.WBOID = WineBottleOrder.WBOID
+		inner join WineBottleType on WineBottleOrderLine.WBTID = WineBottleType.WBTID
+where Vendor.PrimaryContactName like '%Big ol Bottles%';
