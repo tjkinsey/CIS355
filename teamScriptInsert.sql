@@ -1,13 +1,15 @@
 USE ValleyVinyardsDaveIanTanner
 
+DELETE FROM WineBottleType;
+DELETE FROM WineBottleOrderLine;
 DELETE FROM WineBottleOrder;
 DELETE FROM Vendor;
 DELETE FROM PeopleAndCustomers;
-DELETE FROM WineBottleOrderLine;
 DBCC CHECKIDENT ("PeopleAndCustomers", RESEED, 0);
 DBCC CHECKIDENT (Vendor, RESEED, 0);
 DBCC CHECKIDENT (WineBottleOrder, RESEED, 0);
 DBCC CHECKIDENT (WineBottleOrderLine, RESEED, 0);
+DBCC CHECKIDENT (WineBottleType, RESEED, 0);
 
 INSERT INTO PeopleAndCustomers
 	Values('Dave Wells', 6913143, '1236 Canvasback Ct.', 'dwells@rams.colostate.edu', 'V')
@@ -39,3 +41,9 @@ INSERT INTO WineBottleOrderLine
 	(5,1,50,75.8),
 	(5,2,50,100.5),
 	(6,4,30,90.1);
+
+INSERT INTO WineBottleType
+	VALUES(5.45, 4, 'Narrow Neck', 'Brown', 400)
+	,(8.22, 3, 'Wide Mouth', 'Green', 800)
+	,(8.99, 3.5, 'GoldyLox', 'Clear', 122)
+	,(11.99, 5, 'Ultra Glug', 'Blue', 0);
