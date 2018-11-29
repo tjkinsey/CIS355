@@ -13,4 +13,11 @@ INSERT INTO Vendor
 	,(3,5552222, 'Big ol Bottles Inc.','Biggest Dang Bottles Money Can Buy')
 	,(4,5553333, 'Unbreakable Glass Co.', 'You seriously cannot break these bottles!')
 	,(5,5554444, 'Screw Your Cork Ind.', 'No corks only screw caps');
-	
+
+INSERT INTO WineBottleOrder
+VALUES(1,'11-28-2018',NULL),
+(2,'9-16-2018','9-18-2018'),
+(2,'4-19-2018','4-24-2018'),
+(3,'1-10-2018','3-13-2018'),
+(4,'12-16-2017','12-20-2017'),
+(4,'10-24-2018','10-28-2018');
