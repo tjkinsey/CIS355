@@ -67,3 +67,9 @@ From
 	Vendor 
 Where 
 	VID IN (SELECT VID FROM WineBottleOrder Group BY (VID) Having Count(VID) > 1);
+	
+	
+7. Find the average price of our bottle orders.
+
+select avg(WineBottleOrderLine.SalePrice) from WineBottleOrderLine;
+
